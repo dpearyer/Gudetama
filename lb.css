@@ -3,13 +3,19 @@
 
 :root {
     --primary-color: #FFD700;
+    --secondary-color: #CC8716;
+    --dark-color: #DAA520;
+    --light-color: #E2DED6;
+    
 }
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
- body {
+ 
+body {
     font-family: 'Nunito', sans-serif;
     color: grey;
     line-height: 1.8;
@@ -20,7 +26,8 @@
      text-decoration: none;
      color: #333333;
  }
-  h1, h2 {
+ 
+ h1, h2 {
       font-weight: 600;
       line-height: 1.5;
       margin: 13px 0;
@@ -54,6 +61,15 @@
 
   .navbar a:hover {
       border-bottom: 1px grey solid;
+      background: rgba($white, 0);
+      font-weight: 900;
+      letter-spacing: 1px;
+      stroke-width: 5;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    
+      
   }
   
   .navbar .flex {
@@ -132,6 +148,77 @@
      .stats {
          padding-top: 100px;
      }
+
+     .stats .grid h3 {
+    font-size: 35px;
+    
+     }
+
+     .stats .grid p {
+       font-size: 20px;
+       font-weight: bold;
+     }
+     
+
+     
+
+     /* Cli */
+     .cli .grid {
+       grid-template-columns: repeat(3, 1fr);
+       grid-template-rows: repeat(2, 1fr);
+     }
+
+    
+    
+
+     .cli .grid > *:first-child {
+       grid-column: 1 /span 2;
+       grid-row: 1 / span 2;
+     }
+
+     /* Cloud */
+     .cloud .grid {
+       grid-template-columns: repeat(3, 1fr);
+     }
+
+     /*Languages*/
+     .languages .flex{
+      display: flex;
+      flex-wrap: wrap;
+      
+       
+     }
+
+     .languages .card1 {
+      text-align: center;
+      box-shadow: 3px 10px rgba(0,0,0,0.2);
+      padding: 10px;
+      margin-right: 70px;
+      width: 100px;
+      transition: transform 0.2s ease-in;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      
+      
+      
+     }
+
+     .container .flex {
+       align-items: center;
+     }
+
+     .languages .card1 h4 {
+       font-size: 20px;
+       margin-bottom: 10px;
+     }
+
+     .languages .card1:hover {
+       transform: translateY(-6px) ;
+       color: brown;
+       border:var(--primary-color) solid 1px;
+       background:#fff;
+     }
+    
   
   /* Utilities */
   .container {
@@ -147,7 +234,7 @@
   .card {
       background-color: #DAA520;
       border-radius: 20px;
-      box-shadow: o 3px 10px rgba(0,0,0,0.2);
+      box-shadow: 3px 10px rgba(0,0,0,0.1);
       padding: 20px;
       margin: 10px;
       width: 400px;
@@ -170,11 +257,58 @@
 
   }
 
+
   .btn:hover {
     transform: scale(0.98);
     transform: rotate(3deg);
   }
 
+  /* Backgrounds & colored buttons */
+  .bg-primary, 
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+
+  .bg-secondary, 
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+  }
+
+  .bg-dark, 
+  .btn-dark {
+    background-color: var(--dark-color);
+    color: #fff;
+  }
+
+  .light, 
+  .light {
+    background-color: var(--light-color);
+    color: brown;
+  }
+
+  /* Text Sizes */
+  .lead {
+    font-size: 20px;
+  }
+  
+  .sm{
+    font-size: 1rem;
+  }
+
+  .md{
+    font-size: 2rem;
+  }
+
+  .lg{
+    font-size: 3rem;
+  }
+
+  .xl {
+    font-size: 4rem;
+  }
+  
   .text-center {
       text-align: center;
   }
@@ -194,36 +328,80 @@
       justify-content: center;
       align-items: center;
       height: 100%;
+      text-align: center;
   }
   
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Padding */
-  .py-1 {
-    padding: 1rem;
+  
+
+  /* Margin */
+  .my-1 {
+    margin: 1rem 0;
+  }
+
+  .my-2 {
+    margin: 1.5rem 0;
+  }
+
+  .my-3 {
+    margin: 2rem 0;
+  }
+
+  .my-4 {
+    margin: 3rem 0;
+  }
+
+  .my-5 {
+    margin: 4rem 0;
+  }
+
+  .m-1 {
+    margin: 1rem;
+  }
+
+  .m-2 {
+    margin: 1.5rem;
+  }
+
+  .m-3 {
+    margin: 2rem;
+  }
+
+  .m-4 {
+    margin: 3rem;
+  }
+
+  .m-5 {
+    margin: 4rem;
+  }
+ 
+/* Padding */
+
+.py-1 {
+  padding: 1rem 0;
 }
 
 .py-2 {
-  padding: 1.5rem;
+  padding: 1.5rem 0;
 }
 
 .py-3 {
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .py-4 {
-  padding: 3rem;
+  padding: 3rem 0;
 }
 
 .py-5 {
-  padding: 4rem;
+  padding: 4rem 0;
 }
 
-/* Padding */
 .p-1 {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .p-2 {
@@ -241,5 +419,3 @@
 .p-5 {
   padding: 4rem;
 }
-
- 
